@@ -35,6 +35,8 @@ def get_search_results(access_token: str, value: str) -> dict:
 
     response = requests.get(path.join(API_URL, 'search'), headers=headers, params=params)
 
+    check_response(response)
+
     data = response.json()
 
     return {
